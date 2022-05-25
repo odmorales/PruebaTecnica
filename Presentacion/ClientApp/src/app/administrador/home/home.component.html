@@ -1,0 +1,32 @@
+<mat-toolbar color="primary"
+    class="mat-elevation-z8">
+    <span>Prueba Técnica</span>
+    <span class="spacer"></span>
+    
+    <div fxLayout="row"
+        fxLayoutGap="40px">
+        <div fxFlex
+            fxLayout="row"
+            fxLayoutGap="10px"
+            fxLayoutAlign="center center">
+            <h3> {{ usuario.userName | titlecase }} </h3>
+
+            <mat-icon>admin_panel_settings</mat-icon>
+        </div>
+
+        <div fxFlex>
+            <button mat-icon-button
+                (click)="logout()">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>
+
+<div fxLayout="row" 
+    fxLayoutAlign="center">
+    <div fxFlex="95"
+    [style.margin]="'50px 0'">
+        <router-outlet></router-outlet>
+    </div>
+</div>

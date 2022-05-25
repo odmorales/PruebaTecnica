@@ -1,0 +1,60 @@
+<mat-card>
+    <mat-card-title>
+        <div fxLayout="row" 
+             fxLayoutAlign="space-between center">
+            <div fxFlex="50">
+                <span>Libreria</span>
+            </div>
+
+            <div fxFlex="50" fxLayoutAlign="end">
+                <div fxLayout="row" fxLayoutGap="15px" fxLayoutGap.xs="10px">
+                    <button mat-raised-button
+                            color="primary"
+                            (click)="sincronizar()">
+                            Sincronizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-card-title>
+
+    <hr>
+    <br>
+
+    <ng-container *ngIf="!authors || authors.length === 0; else datos">
+        <app-spinner [lista]="authors"></app-spinner>
+    </ng-container>
+
+    <ng-template #datos>
+        <p-table [value]="authors" 
+                 #dt
+                 [paginator]="true" 
+                 [rows]="10" 
+                 [showCurrentPageReport]="true" 
+                 responsiveLayout="scroll"
+                 currentPageReportTemplate="Viendo de {first} a {last} de {totalRecords} Authors" 
+                 [rowsPerPageOptions]="[10,25,50]"
+                 [globalFilterFields]="['firstName', 'book.title']">
+            <ng-template pTemplate="caption">
+                <app-input-filtro [dt]="dt"></app-input-filtro>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th pSortableColumn="book.publishDate">Date <p-sortIcon field="date"></p-sortIcon></th>
+                    <th>Libro</th>
+                    
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-author>
+                <tr>
+                    <td>{{ author.firstName | titlecase}}</td>
+                    <td>{{ author.book.publishDate | convertirFecha | date: "EEE, dd 'de' MMMM 'de' yyyy" }}</td>
+                    <td>{{ author.book.title }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </ng-template>
+
+</mat-card>

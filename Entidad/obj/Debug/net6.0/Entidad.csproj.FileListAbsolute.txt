@@ -1,0 +1,12 @@
+D:\recurs\libreriaApp\Entidad\bin\Debug\net6.0\Entidad.deps.json
+D:\recurs\libreriaApp\Entidad\bin\Debug\net6.0\Entidad.dll
+D:\recurs\libreriaApp\Entidad\bin\Debug\net6.0\ref\Entidad.dll
+D:\recurs\libreriaApp\Entidad\bin\Debug\net6.0\Entidad.pdb
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.csproj.AssemblyReference.cache
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.GeneratedMSBuildEditorConfig.editorconfig
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.AssemblyInfoInputs.cache
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.AssemblyInfo.cs
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.csproj.CoreCompileInputs.cache
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.dll
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\ref\Entidad.dll
+D:\recurs\libreriaApp\Entidad\obj\Debug\net6.0\Entidad.pdb

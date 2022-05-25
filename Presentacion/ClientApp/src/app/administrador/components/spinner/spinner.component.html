@@ -1,0 +1,27 @@
+<div fxLayout="row"
+    fxLayoutAlign="center center">
+    <ng-container *ngIf="!lista; else vacio">
+        <div fxLayout="column">
+            <div>
+                <mat-spinner></mat-spinner>
+            </div>
+            
+            <div fxLayoutAlign="space-between center">
+                <h3>Buscando datos.</h3>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #vacio>
+        <div fxLayout="column"
+            fxLayoutAlign="center center">
+            <div>
+                <img [src]="getImage" alt="Registros no encontrados">
+            </div>
+            
+            <div >
+                <h3>No se encontraron registros en la base de datos.</h3>
+            </div>
+        </div>
+    </ng-template>
+</div>
+

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uDyJBIQTwfCEzk7SKl3C8192tTQINaU0Smn93QKNHKRL8sUOWuGpYcTbZUh2eyA/U/mkkBnhh62CulFeQVdglQ==",
+  "success": true,
+  "projectFilePath": "D:\\recurs\\libreriaApp\\Entidad\\Entidad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\OdMorales\\.nuget\\packages\\system.componentmodel.annotations\\6.0.0-preview.4.21253.7\\system.componentmodel.annotations.6.0.0-preview.4.21253.7.nupkg.sha512"
+  ],
+  "logs": []
+}

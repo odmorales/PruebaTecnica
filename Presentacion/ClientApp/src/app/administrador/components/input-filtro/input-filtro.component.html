@@ -1,0 +1,13 @@
+<span class="p-float-label p-input-icon-left ml-auto" >
+    <i class="pi pi-search"></i>
+    <input fxFlex="50" pInputText type="text" id="float-input" (input)="dt.filterGlobal(getValue($event), 'contains')" />
+    <label for="float-input">Filtrar</label>
+</span>
+
+<!-- <div fxLayout="row" fxLayoutAlign="end center">
+    <span class="p-float-label p-input-icon-left ml-auto" >
+        <i class="pi pi-search"></i>
+        <input fxFlex="100" pInputText type="text" id="float-input" (input)="dt.filterGlobal(getValue($event), 'contains')" />
+        <label for="float-input">Filtrar</label>
+    </span>
+</div> -->

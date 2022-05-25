@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "083c0acc-8d1c-4819-877e-0aefa3c21e2b": {
+      "ProjectGuid": "083c0acc-8d1c-4819-877e-0aefa3c21e2b",
+      "DisplayName": "libreriaApp",
+      "ColorIndex": 0
+    },
+    "d5eb7952-2836-4791-9754-ef09fa61f287": {
+      "ProjectGuid": "d5eb7952-2836-4791-9754-ef09fa61f287",
+      "DisplayName": "Datos",
+      "ColorIndex": 1
+    },
+    "3bec85b8-6710-43dd-b3dc-251a3def4ca0": {
+      "ProjectGuid": "3bec85b8-6710-43dd-b3dc-251a3def4ca0",
+      "DisplayName": "Entidad",
+      "ColorIndex": 2
+    },
+    "88f85505-35e2-40aa-ab7e-c2ac511dc03b": {
+      "ProjectGuid": "88f85505-35e2-40aa-ab7e-c2ac511dc03b",
+      "DisplayName": "Logica",
+      "ColorIndex": 3
+    },
+    "6c9c3833-752d-48f5-830a-256655955517": {
+      "ProjectGuid": "6c9c3833-752d-48f5-830a-256655955517",
+      "DisplayName": "Logica",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

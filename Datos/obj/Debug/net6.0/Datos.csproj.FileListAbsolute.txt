@@ -1,0 +1,15 @@
+D:\recurs\libreriaApp\Datos\bin\Debug\net6.0\Datos.deps.json
+D:\recurs\libreriaApp\Datos\bin\Debug\net6.0\Datos.dll
+D:\recurs\libreriaApp\Datos\bin\Debug\net6.0\ref\Datos.dll
+D:\recurs\libreriaApp\Datos\bin\Debug\net6.0\Datos.pdb
+D:\recurs\libreriaApp\Datos\bin\Debug\net6.0\Entidad.dll
+D:\recurs\libreriaApp\Datos\bin\Debug\net6.0\Entidad.pdb
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.csproj.AssemblyReference.cache
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.GeneratedMSBuildEditorConfig.editorconfig
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.AssemblyInfoInputs.cache
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.AssemblyInfo.cs
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.csproj.CoreCompileInputs.cache
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.csproj.CopyComplete
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.dll
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\ref\Datos.dll
+D:\recurs\libreriaApp\Datos\obj\Debug\net6.0\Datos.pdb
