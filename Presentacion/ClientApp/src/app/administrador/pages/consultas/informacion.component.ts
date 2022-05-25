@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EMPTY, switchMap } from 'rxjs';
 import { Author } from '../../classes/author';
 import { IAuthor } from '../../interfaces/author.interface';
@@ -8,8 +8,8 @@ import { SincronizarService } from '../../services/sincronizar.service';
 import Swal from 'sweetalert2';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
-import { Excel } from '../../interfaces/excel.interface';
 import { AuthorMap } from '../../classes/authorMap';
+import { Table } from 'primeng/table';
 
 const EXCEL_TYPE = 
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=UTF-8";
@@ -26,8 +26,12 @@ export class InformacionComponent implements OnInit {
   iBooks: IBook[]  = [];
   iAuthors: IAuthor[] = [];
   authors: Author[] = [];
+  authorsCopy: Author[] = [];
   authorsMap: AuthorMap[] = [];
   author: AuthorMap;
+  termino: string = "";
+
+  @ViewChild('dt') table?: Table;
 
   constructor(private sincronizarService: SincronizarService) { 
     this.author = {
@@ -41,9 +45,10 @@ export class InformacionComponent implements OnInit {
 
   }
 
-  mapearAuthors() {
+  mapearAuthors(): any[] {
+    ( this.table?.filteredValue ) ? this.authorsCopy = this.table.filteredValue : this.authorsCopy = this.authors;
 
-    this.authors.forEach(author => {
+    this.authorsCopy.forEach(author => {
 
       this.author = new AuthorMap(
         author.firstName!,
@@ -53,15 +58,13 @@ export class InformacionComponent implements OnInit {
 
       this.authorsMap = [...this.authorsMap,this.author];
     });
-
-    console.log(this.authorsMap);
+   
+    return this.authorsMap;    
   }
 
   exportExcel() {
 
-    this.mapearAuthors();
-
-    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.authorsMap);
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.mapearAuthors());
     const workbook: XLSX.WorkBook = { Sheets: {'data': worksheet},
     SheetNames:['data']};
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type:'array' });
@@ -72,6 +75,7 @@ export class InformacionComponent implements OnInit {
   private saveAsExcel(buffer: any, fileName: string): void {
     const data: Blob = new Blob([buffer], {type: EXCEL_TYPE});
     FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXT);
+    this.authorsMap = [];
   }
 
   sincronizar() {
