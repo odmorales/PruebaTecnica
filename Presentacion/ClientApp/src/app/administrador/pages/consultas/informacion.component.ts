@@ -8,6 +8,8 @@ import { SincronizarService } from '../../services/sincronizar.service';
 import Swal from 'sweetalert2';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
+import { Excel } from '../../interfaces/excel.interface';
+import { AuthorMap } from '../../classes/authorMap';
 
 const EXCEL_TYPE = 
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=UTF-8";
@@ -24,15 +26,42 @@ export class InformacionComponent implements OnInit {
   iBooks: IBook[]  = [];
   iAuthors: IAuthor[] = [];
   authors: Author[] = [];
+  authorsMap: AuthorMap[] = [];
+  author: AuthorMap;
 
-  constructor(private sincronizarService: SincronizarService) { }
+  constructor(private sincronizarService: SincronizarService) { 
+    this.author = {
+      nombre: "",
+      date: "",
+      libro: ""
+    }
+  }
 
   ngOnInit(): void {
 
   }
 
+  mapearAuthors() {
+
+    this.authors.forEach(author => {
+
+      this.author = new AuthorMap(
+        author.firstName!,
+        author.book.publishDate!,
+        author.book.title!
+      );
+
+      this.authorsMap = [...this.authorsMap,this.author];
+    });
+
+    console.log(this.authorsMap);
+  }
+
   exportExcel() {
-    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.authors);
+
+    this.mapearAuthors();
+
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.authorsMap);
     const workbook: XLSX.WorkBook = { Sheets: {'data': worksheet},
     SheetNames:['data']};
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type:'array' });
