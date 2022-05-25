@@ -7,12 +7,10 @@ namespace Logica
     public class AuthorService
     {
         private readonly LibreriaContext? _context;
-        private BookService _bookService;
         
         public AuthorService(LibreriaContext context)
         {
             _context = context;
-            _bookService = new BookService(_context);
         }
 
         public string EliminarTodos()

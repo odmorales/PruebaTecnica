@@ -11,10 +11,12 @@ namespace Logica
     public class BookService
     {
         private readonly LibreriaContext? _context;
+        private AuthorService _authorService;
 
         public BookService(LibreriaContext context)
         {
             _context = context;
+            _authorService = new AuthorService(_context);
         }
 
         public string EliminarTodos()
@@ -22,9 +24,16 @@ namespace Logica
             try
             {
                 var books = _context?.Books?.ToList();
+                var authors = _authorService.Consultar();
 
                 if (books?.Count != 0)
                 {
+
+                    if(authors != null)
+                    {
+                        _authorService.EliminarTodos();
+                    }
+
                     _context?.Books?.RemoveRange(books!);
                     _context?.SaveChanges();
 

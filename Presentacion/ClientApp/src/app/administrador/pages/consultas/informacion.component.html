@@ -36,13 +36,27 @@
                  [rowsPerPageOptions]="[10,25,50]"
                  [globalFilterFields]="['firstName', 'book.title']">
             <ng-template pTemplate="caption">
-                <app-input-filtro [dt]="dt"></app-input-filtro>
+                <div fxLayout="row" 
+                     fxLayoutAlign="space-between center">
+                     <div fxFlex="90">
+                         <app-input-filtro [dt]="dt"></app-input-filtro>
+                     </div>
+                     <div fxFlex="10" fxFlexAlign="end">
+                        <button type="button" 
+                                pButton pRipple 
+                                icon="pi pi-file-excel" 
+                                (click)="exportExcel()" 
+                                class="p-button-success p-mr-2"  
+                                pTooltip="XLS"></button>
+                     </div>
+                </div>
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
                     <th>Nombre</th>
                     <th pSortableColumn="book.publishDate">Date <p-sortIcon field="date"></p-sortIcon></th>
                     <th>Libro</th>
+                    
                     
                 </tr>
             </ng-template>
